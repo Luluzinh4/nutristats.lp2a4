@@ -1,0 +1,5 @@
+[Mon Nov 11 21:04:11.458956 2019] [mpm_winnt:notice] [pid 13656:tid 848] AH00455: Apache/2.4.6 (Win32) PHP/5.4.17 configured -- resuming normal operations
+[Mon Nov 11 21:04:11.459956 2019] [mpm_winnt:notice] [pid 13656:tid 848] AH00456: Apache Lounge VC10 Server built: Jul 16 2013 11:15:41
+[Mon Nov 11 21:04:11.459956 2019] [core:notice] [pid 13656:tid 848] AH00094: Command line: 'C:\\Usb Web Server - site php/apache2/bin/httpd_usbwv8.exe -d C:/Usb Web Server - site php/apache2'
+[Mon Nov 11 21:04:11.501461 2019] [mpm_winnt:notice] [pid 13656:tid 848] AH00418: Parent: Created child process 14440
+[Mon Nov 11 21:04:13.322034 2019] [mpm_winnt:notice] [pid 14440:tid 840] AH00354: Child: Starting 64 worker threads.
