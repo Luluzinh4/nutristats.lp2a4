@@ -78,7 +78,6 @@ public class UsuarioPersist {
     public Usuario VerificarSeUsuarioExiste(Usuario usuario) {
     	Usuario resultado = null;
     	for(Usuario u: findAll()) {
-    		System.out.println("AAAAAAAAAAAAAAAAAAA ENTROU AQUI");
     		if(u.equals(usuario)) {
     			
     			resultado = u;
@@ -118,7 +117,7 @@ public class UsuarioPersist {
 		
 		return u;
     }
-    public Usuario verificarNomeUsuarioExiste(String nomeUsuario) {
+	public Usuario verificarNomeUsuarioExiste(String nomeUsuario) {
 		EntityManager em = new ConnectionFactory().getConnection();
 		
 		Usuario u =null;

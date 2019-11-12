@@ -15,23 +15,31 @@ import PersistJPA.UsuarioPersist;
 @WebServlet("/UsuarioControlador")
 public class UsuarioControlador extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    String listar="usuarios/listar.jsp";
-    String add="usuarios/adicionar.jsp";
-    String edit="usuarios/editar.jsp";
+//    String listar="usuarios/listar.jsp";
+//    String add="usuarios/adicionar.jsp";
+//    String edit="usuarios/editar.jsp";
     String cadastrado = "usuarios/cadastroEfetuado.jsp";
-    String logado = "logado.jsp";
+	String logado = "logado.jsp";
+	String telaInicial = "index.jsp";
     public UsuarioControlador() {
         super();
 
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().append("Served at: ").append(request.getContextPath());
 		String acesso="";
-		String rota=request.getParameter("rota");
-		if(rota.equalsIgnoreCase("listar")) {
-			acesso=listar;
+		 String rota=request.getParameter("rota");
+		 System.out.println("Entrou no get no logout. Rota: " + rota);
+//		if(rota.equalsIgnoreCase("listar")) {
+//			acesso=listar;
+//		}
+		
+		//tela de logout
+		if(rota.equalsIgnoreCase("deslogar")) {
+			request.setAttribute("userLogado", null);
+			acesso = telaInicial;
 		}
+		
 		RequestDispatcher usuariosViews = request.getRequestDispatcher(acesso);
 		usuariosViews.forward(request, response);
 	}
@@ -48,9 +56,10 @@ public class UsuarioControlador extends HttpServlet {
 			
 			Usuario u = new Usuario();
 
-			//u.setCpf(request.getParameter("cpf"));
-			//u.setEmail(request.getParameter("email"));
-			//u.setNome(request.getParameter("nome"));
+			u.setDtaNascimento(request.getParameter("dataNasc"));
+			u.setEmail(request.getParameter("email"));
+			u.setNome(request.getParameter("nomeUser"));
+			u.setSexo(request.getParameter("sexo"));
 			u.setSenha(request.getParameter("senha"));
 			u.setNomeUsuario(request.getParameter("username"));
 			if(up.VerificarSeUsuarioExiste(u)==null) {
@@ -65,9 +74,7 @@ public class UsuarioControlador extends HttpServlet {
 			String username = request.getParameter("username");
 
 			//if(up.verificarEmailExiste(email)==null) {
-			if(up.verificarNomeUsuarioExiste(username)==null) {
-				System.out.println("AAAAAAAAAAAAAAAAAA"+ username);
-	
+			if(up.verificarNomeUsuarioExiste(username)==null) {	
 				retorno = "email";
 				acesso=cadastrado;
 			}else {
@@ -87,6 +94,15 @@ public class UsuarioControlador extends HttpServlet {
 				}
 			}
 		}
+
+//		//tela de logout
+//		if(rota.equalsIgnoreCase("deslogar")) {
+//			System.out.println("Entrou no if");
+//			request.setAttribute("userLogado", null);
+//			acesso = telaInicial;
+//			retorno = "logoutUsuario";
+//		}
+
 		request.setAttribute("retorno", retorno);
 		RequestDispatcher usuariosViews = request.getRequestDispatcher(acesso);
 		usuariosViews.forward(request, response);

@@ -10,7 +10,6 @@ public class Usuario {
 	@Id
 	@GeneratedValue(strategy =GenerationType.IDENTITY)
 	private Integer id;
-	private String cpf;
 	private String nome;
 	private String email;
 	private String senha;
@@ -52,12 +51,6 @@ public class Usuario {
 		this.dtaNascimento = dtaNascimento;
 	}
 
-
-
-	public String getCpf() {
-		return cpf;
-	}
-	
 	
 	
 	public Integer getId() {
@@ -72,9 +65,7 @@ public class Usuario {
 
 
 
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
+	
 	public String getNome() {
 		return nome;
 	}
@@ -114,9 +105,6 @@ public class Usuario {
 	public String toString() {
 		return "Usuario [id=" + id + ", nomeUsuario=" + nomeUsuario + "]";
 	}
-	
 
-	
-	
 	
 }
