@@ -21,18 +21,20 @@ public class UsuarioControlador extends HttpServlet {
     String cadastrado = "usuarios/cadastroEfetuado.jsp";
 	String logado = "logado.jsp";
 	String telaInicial = "index.jsp";
+	
+	
+	private static Usuario UsuarioSistema;
+	
     public UsuarioControlador() {
         super();
 
     }
-
+    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String acesso="";
 		 String rota=request.getParameter("rota");
 		 System.out.println("Entrou no get no logout. Rota: " + rota);
-//		if(rota.equalsIgnoreCase("listar")) {
-//			acesso=listar;
-//		}
+		 
 		
 		//tela de logout
 		if(rota.equalsIgnoreCase("deslogar")) {
@@ -80,12 +82,13 @@ public class UsuarioControlador extends HttpServlet {
 			}else {
 				System.out.println("ENTROU A1");
 				String senha = request.getParameter("senha");
+				
 				//Usuario userLogado = up.verificarEmailExiste(email);
 				Usuario userLogado = up.verificarNomeUsuarioExiste(username);
 
 				if(up.verificarSenhaEstaCorreta(userLogado,senha)==true) {
-					
-					request.setAttribute("userLogado", userLogado);
+					setUsuarioSistema(userLogado);
+					request.setAttribute("userLogado", getUsuarioSistema());
 					acesso = logado;
 				}else {
 					retorno = "senha";
@@ -94,19 +97,20 @@ public class UsuarioControlador extends HttpServlet {
 				}
 			}
 		}
-
-//		//tela de logout
-//		if(rota.equalsIgnoreCase("deslogar")) {
-//			System.out.println("Entrou no if");
-//			request.setAttribute("userLogado", null);
-//			acesso = telaInicial;
-//			retorno = "logoutUsuario";
-//		}
-
 		request.setAttribute("retorno", retorno);
 		RequestDispatcher usuariosViews = request.getRequestDispatcher(acesso);
 		usuariosViews.forward(request, response);
 		
 	}
+
+	public static Usuario getUsuarioSistema() {
+		return UsuarioSistema;
+	}
+
+	public static void setUsuarioSistema(Usuario usuarioSistema) {
+		UsuarioSistema = usuarioSistema;
+	}
+
+
 
 }

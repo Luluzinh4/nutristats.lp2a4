@@ -18,12 +18,13 @@
 
     <title>NutriStats</title>
 </head>
+
 <body>
 	<% if(request.getAttribute("userLogado") != null) { %>
     <header>
         <ul class="menu align-center">
             <li><a>Home</a></li>
-            <li><a href="/dietas.jsp">Dietas</a></li>
+            <li><a href="./dieta/index.jsp">Dietas</a></li>
             <% Usuario u = (Usuario) request.getAttribute("userLogado");
             String nome = u.getNome().split(" ")[0];
             %>
@@ -47,7 +48,7 @@
             <div class="columns">
 
                 <a data-open="logout">Logout</a>
-
+                <a data-open="perfil">Perfil</a>
 
                 <div class="reveal" id="logout" data-reveal>
                     <form action="./UsuarioControlador?rota=deslogar" method="post">
@@ -62,53 +63,47 @@
                     <span aria-hidden="true">&times;</span>
                 </div>
 
-                <%-- <div class="cadastro">
+               <div class="cadastro">
                   
                         <div class="reveal cadastro" id="cadastro" data-reveal>
-                            <h1><strong>Cadastro do Site</strong></h1>
-                            <h4><strong>Dados Principais</strong></h4>
-                            <label for="nome">Nome Completo
-                                <input type="text" name="nomeUser" id="nomeUser">
-                            </label>
-                            <label for="email">Endereï¿½o de E-mail
-                                <input type="email" name="email" id="email">
-                            </label>
-                            <label for="dataNasc">Data de Nascimento
-                                <input type="date" name="dataNasc" id="dataNasc">
-                            </label>
-                            <label for="sexo">Sexo
-                                <select name="sexo" id="sexo">
-                                    <option value="m">Masculino</option>
-                                    <option value="f">Feminino</option>
-                                    <option value="o">Outro</option>
-                                </select>
-                            </label>
-                            <div class="btn">
-                                <a data-open="proximo" class="secondary button">Prï¿½ximo</a>
-                            </div>
-                            <button class="close-button" data-close aria-label="Close reveal" type="button">
-                            <span aria-hidden="true">&times;</span>
+                            <form action="./UsuarioControlador?rota=cadastrado" method="post">
+                                <h1><strong>Cadastro do Site</strong></h1>
+                                <h4><strong>Dados Principais</strong></h4>
+                                <label for="nome">Nome Completo
+                                    <input type="text" name="nomeUser" id="nomeUser">
+                                </label>
+                                <label for="email">Endereço de E-mail
+                                    <input type="email" name="email" id="email">
+                                </label>
+                                <label for="dataNasc">Data de Nascimento
+                                    <input type="date" name="dataNasc" id="dataNasc">
+                                </label>
+                                <label for="sexo">Sexo
+                                    <select name="sexo" id="sexo">
+                                        <option value="m">Masculino</option>
+                                        <option value="f">Feminino</option>
+                                        <option value="o">Outro</option>
+                                    </select>
+                                </label>
+                                <hr>
+                                <h4><strong>Dados de Login</strong></h4>
+                                <label for="username">Nome de Usuário
+                                    <input type="text" name="username" id="username" required>
+                                </label>
+                                <label for="senha">Senha
+                                    <input type="password" name="senha" id="senha" required>
+                                </label>
+                                <label for="confirmSenha">Confirme a Senha
+                                    <input type="password" name="confirmSenhaUser" id="confirmSenhaUser" required>
+                                </label>
+                                <div class="btn">
+                                    <input type="submit" class="secondary button large" value="Cadastrar">
+                                </div>
+                                <button class="close-button" data-close aria-label="Close reveal" type="button">
+                                <span aria-hidden="true">&times;</span>
+                            </form>
                         </div>
-                        <div class="reveal cadastro" id="proximo" data-reveal>
-                          <form action="./UsuarioControlador?rota=cadastrado" method="post">
-                            <h4><strong>Dados de Login</strong></h4>
-                            <label for="username">Nome de Usuï¿½rio
-                                <input type="text" name="username" id="username" required>
-                            </label>
-                            <label for="senha">Senha
-                                <input type="password" name="senha" id="senha" required>
-                            </label>
-                            <label for="confirmSenha">Confirme a Senha
-                                <input type="password" name="confirmSenhaUser" id="confirmSenhaUser" required>
-                            </label>
-                            <div class="btn">
-                                <input type="submit" class="secondary button large" value="Cadastrar">
-                            </div>
-                            <button class="close-button" data-close aria-label="Close reveal" type="button">
-                            <span aria-hidden="true">&times;</span>
-                        </div>
-                    </form>
-                </div> --%>
+                </div>
             </div>
         </div>
     </footer>
