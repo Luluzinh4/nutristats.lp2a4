@@ -26,7 +26,7 @@ public class NutrientePersist {
 		
 		List<Nutriente> nutrientes = null;
 		try {
-			String consulta = "from Usuario u where email like '%"+tipoAlimento+"%'";
+			String consulta = "from nutriente n where tipoAlimento like '%"+tipoAlimento+"%'";
 	
 			nutrientes = em.createQuery(consulta).getResultList();
 		} catch (Exception e) {

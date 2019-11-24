@@ -1,5 +1,5 @@
-[Thu Nov 21 18:01:45.756923 2019] [mpm_winnt:notice] [pid 9920:tid 820] AH00455: Apache/2.4.6 (Win32) PHP/5.4.17 configured -- resuming normal operations
-[Thu Nov 21 18:01:45.757920 2019] [mpm_winnt:notice] [pid 9920:tid 820] AH00456: Apache Lounge VC10 Server built: Jul 16 2013 11:15:41
-[Thu Nov 21 18:01:45.757920 2019] [core:notice] [pid 9920:tid 820] AH00094: Command line: 'C:\\Users\\afreitas\\Desktop\\teste\\nutristats.lp2a4\\Usb Web Server/apache2/bin/httpd_usbwv8.exe -d C:/Users/afreitas/Desktop/teste/nutristats.lp2a4/Usb Web Server/apache2'
-[Thu Nov 21 18:01:45.773877 2019] [mpm_winnt:notice] [pid 9920:tid 820] AH00418: Parent: Created child process 9372
-[Thu Nov 21 18:01:46.505081 2019] [mpm_winnt:notice] [pid 9372:tid 848] AH00354: Child: Starting 64 worker threads.
+[Sun Nov 24 13:31:42.021950 2019] [mpm_winnt:notice] [pid 1472:tid 820] AH00455: Apache/2.4.6 (Win32) PHP/5.4.17 configured -- resuming normal operations
+[Sun Nov 24 13:31:42.022951 2019] [mpm_winnt:notice] [pid 1472:tid 820] AH00456: Apache Lounge VC10 Server built: Jul 16 2013 11:15:41
+[Sun Nov 24 13:31:42.022951 2019] [core:notice] [pid 1472:tid 820] AH00094: Command line: 'C:\\nutristats.lp2a4\\Usb Web Server/apache2/bin/httpd_usbwv8.exe -d C:/nutristats.lp2a4/Usb Web Server/apache2'
+[Sun Nov 24 13:31:42.068031 2019] [mpm_winnt:notice] [pid 1472:tid 820] AH00418: Parent: Created child process 12448
+[Sun Nov 24 13:31:44.267098 2019] [mpm_winnt:notice] [pid 12448:tid 820] AH00354: Child: Starting 64 worker threads.

@@ -6,8 +6,24 @@ document.getElementById('barraPesquisa').addEventListener('focusout', function()
     document.getElementById('bt-buscar').style.width = '10rem';
 });
 
+
+
+
 //Chamada Foundation (Funcionamento do Modal - Foundation Reveal)
 $(document).foundation();
+//more click
+$('.card-profile-stats-more-link').click(function(e){
+	  e.preventDefault();
+	  if ( $(".card-profile-stats-more-content").is(':hidden') ) {
+	    $('.card-profile-stats-more-link').find('i').removeClass('fa-angle-down').addClass('fa-angle-up');
+	  } else {
+	    $('.card-profile-stats-more-link').find('i').removeClass('fa-angle-up').addClass('fa-angle-down');
+	  }
+	  $(this).next('.card-profile-stats-more-content').slideToggle();
+	});
+
+
+
 
 //Validação de Senhas antes de levar para o servidor
 var senha = document.getElementById("senha");

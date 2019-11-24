@@ -20,7 +20,7 @@
     <main>
         <div id="pesquisa" align="center">
             <img src="https://i.imgur.com/MTA5XT4.png" alt="imagem-logo" id="logo">
-            <form action="/pesqAlimentos" method="get">
+            <form action="./NutrienteControlador" method="get">
                 <input type="search" name="barraPesq" placeholder="Ex. feijão..." class="animated-search-form" id="barraPesquisa">
                 <button class="hollow button success animated-button" type="submit" id="bt-buscar">Buscar</button>
             </form>

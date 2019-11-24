@@ -5,49 +5,57 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+
 @Entity
 public class Nutriente {
 	
 	@Id
 	@GeneratedValue(strategy =GenerationType.IDENTITY)
-	private String tipoalimento;
-	private String umidade;
+	private int id;
+	private String tipoAlimento;
+	private	String Descricao;
+	private String Umidade;
 	private String kcal;
 	private String kj;
-	private String proteina;
-	private String lipideos;
-	private String colesterol;
+	private String Proteina;
+	private String Lipideos;
+	private String Colesterol;
 	private String carboidrato;
-	private String fibraalimentar;
-	private String cinzas;
-	private String calcio;
-	private String manganes;
-	private String fosforo;
-	private String ferro;
-	private String sodio;
-	private String potassio;
-	private String cobre;
-	private String zinco;
-	private String retinol;
-	private String re;
-	private String rae;
-	private String tiamina;
-	private String riboflavina;
-	private String piridoxina;
-	private String niacina;
-	private String vitaminac;
-	
-	public String getTipoalimento() {
-		return tipoalimento;
+	private String Fibraalimentar;
+	private String Cinzas;
+	private String Calcio;
+	private String Manganes;
+	private String Fosforo;
+	private String Ferro;
+	private String Sodio;
+	private String Potassio;
+	private String Cobre;
+	private String Zinco;
+	private String Retinol;
+	private String RE;
+	private String RAE;
+	private String Tiamina;
+	private String Riboflavina;
+	private String Piridoxina;
+	private String Niacina;
+	private String Vitaminac;
+	public String getTipoAlimento() {
+		return tipoAlimento;
 	}
-	public void setTipoalimento(String tipoalimento) {
-		this.tipoalimento = tipoalimento;
+	public void setTipoAlimento(String tipoAlimento) {
+		this.tipoAlimento = tipoAlimento;
+	}
+	public String getDescricao() {
+		return Descricao;
+	}
+	public void setDescricao(String descricao) {
+		Descricao = descricao;
 	}
 	public String getUmidade() {
-		return umidade;
+		return Umidade;
 	}
 	public void setUmidade(String umidade) {
-		this.umidade = umidade;
+		Umidade = umidade;
 	}
 	public String getKcal() {
 		return kcal;
@@ -62,22 +70,22 @@ public class Nutriente {
 		this.kj = kj;
 	}
 	public String getProteina() {
-		return proteina;
+		return Proteina;
 	}
 	public void setProteina(String proteina) {
-		this.proteina = proteina;
+		Proteina = proteina;
 	}
 	public String getLipideos() {
-		return lipideos;
+		return Lipideos;
 	}
 	public void setLipideos(String lipideos) {
-		this.lipideos = lipideos;
+		Lipideos = lipideos;
 	}
 	public String getColesterol() {
-		return colesterol;
+		return Colesterol;
 	}
 	public void setColesterol(String colesterol) {
-		this.colesterol = colesterol;
+		Colesterol = colesterol;
 	}
 	public String getCarboidrato() {
 		return carboidrato;
@@ -86,113 +94,115 @@ public class Nutriente {
 		this.carboidrato = carboidrato;
 	}
 	public String getFibraalimentar() {
-		return fibraalimentar;
+		return Fibraalimentar;
 	}
 	public void setFibraalimentar(String fibraalimentar) {
-		this.fibraalimentar = fibraalimentar;
+		Fibraalimentar = fibraalimentar;
 	}
 	public String getCinzas() {
-		return cinzas;
+		return Cinzas;
 	}
 	public void setCinzas(String cinzas) {
-		this.cinzas = cinzas;
+		Cinzas = cinzas;
 	}
 	public String getCalcio() {
-		return calcio;
+		return Calcio;
 	}
 	public void setCalcio(String calcio) {
-		this.calcio = calcio;
+		Calcio = calcio;
 	}
 	public String getManganes() {
-		return manganes;
+		return Manganes;
 	}
 	public void setManganes(String manganes) {
-		this.manganes = manganes;
+		Manganes = manganes;
 	}
 	public String getFosforo() {
-		return fosforo;
+		return Fosforo;
 	}
 	public void setFosforo(String fosforo) {
-		this.fosforo = fosforo;
+		Fosforo = fosforo;
 	}
 	public String getFerro() {
-		return ferro;
+		return Ferro;
 	}
 	public void setFerro(String ferro) {
-		this.ferro = ferro;
+		Ferro = ferro;
 	}
 	public String getSodio() {
-		return sodio;
+		return Sodio;
 	}
 	public void setSodio(String sodio) {
-		this.sodio = sodio;
+		Sodio = sodio;
 	}
 	public String getPotassio() {
-		return potassio;
+		return Potassio;
 	}
 	public void setPotassio(String potassio) {
-		this.potassio = potassio;
+		Potassio = potassio;
 	}
 	public String getCobre() {
-		return cobre;
+		return Cobre;
 	}
 	public void setCobre(String cobre) {
-		this.cobre = cobre;
+		Cobre = cobre;
 	}
 	public String getZinco() {
-		return zinco;
+		return Zinco;
 	}
 	public void setZinco(String zinco) {
-		this.zinco = zinco;
+		Zinco = zinco;
 	}
 	public String getRetinol() {
-		return retinol;
+		return Retinol;
 	}
 	public void setRetinol(String retinol) {
-		this.retinol = retinol;
+		Retinol = retinol;
 	}
-	public String getRe() {
-		return re;
+	public String getRE() {
+		return RE;
 	}
-	public void setRe(String re) {
-		this.re = re;
+	public void setRE(String rE) {
+		RE = rE;
 	}
-	public String getRae() {
-		return rae;
+	public String getRAE() {
+		return RAE;
 	}
-	public void setRae(String rae) {
-		this.rae = rae;
+	public void setRAE(String rAE) {
+		RAE = rAE;
 	}
 	public String getTiamina() {
-		return tiamina;
+		return Tiamina;
 	}
 	public void setTiamina(String tiamina) {
-		this.tiamina = tiamina;
+		Tiamina = tiamina;
 	}
 	public String getRiboflavina() {
-		return riboflavina;
+		return Riboflavina;
 	}
 	public void setRiboflavina(String riboflavina) {
-		this.riboflavina = riboflavina;
+		Riboflavina = riboflavina;
 	}
 	public String getPiridoxina() {
-		return piridoxina;
+		return Piridoxina;
 	}
 	public void setPiridoxina(String piridoxina) {
-		this.piridoxina = piridoxina;
+		Piridoxina = piridoxina;
 	}
 	public String getNiacina() {
-		return niacina;
+		return Niacina;
 	}
 	public void setNiacina(String niacina) {
-		this.niacina = niacina;
+		Niacina = niacina;
 	}
 	public String getVitaminac() {
-		return vitaminac;
+		return Vitaminac;
 	}
 	public void setVitaminac(String vitaminac) {
-		this.vitaminac = vitaminac;
+		Vitaminac = vitaminac;
 	}
+	
+	
 	
 	
 	

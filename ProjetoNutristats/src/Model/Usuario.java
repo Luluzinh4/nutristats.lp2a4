@@ -93,18 +93,20 @@ public class Usuario {
 		if(obj.getClass() == this.getClass()){
 			Usuario outroUser = (Usuario)obj;
 			//result = this.getCpf().equals(outroUser.getCpf());
-			
-			//result = result || this.getEmail().equals(outroUser.getEmail());
-			result = this.getNomeUsuario().equals(outroUser.getNomeUsuario());
+			result =  result || this.getNomeUsuario().equals(outroUser.getNomeUsuario());	
 		}
 		return result;
 	}
-	
+
+
 
 	@Override
 	public String toString() {
-		return "Usuario [id=" + id + ", nomeUsuario=" + nomeUsuario + "]";
+		return "Usuario [id=" + id + ", email=" + email + ", nomeUsuario=" + nomeUsuario + "]";
 	}
+	
+
+
 
 	
 }

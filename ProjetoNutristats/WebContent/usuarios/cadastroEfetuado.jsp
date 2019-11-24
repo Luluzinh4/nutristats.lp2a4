@@ -45,12 +45,17 @@
 										botao = "Tente novamente";
 										redirect ="./index.jsp";
 											
-									}
-									else{
-										mensagem = "Ocorreu um erro durante o cadastro :(";
-										botao = "Tente novamente";
-										redirect ="./index.jsp";
-									}
+									}else
+										if(retorno.trim().equals("JaCadastradoLogado") ==true){
+											mensagem = "Usuario Já cadastrado em nosso sistema :(";
+											botao = "Voltar";
+											redirect ="./index.jsp";
+										}
+										else{
+											mensagem = "Ocorreu um erro durante o cadastro :(";
+											botao = "Tente novamente";
+											redirect ="./index.jsp";
+										}
 		
 
 								
@@ -61,7 +66,7 @@
                                     <h3 style="color: white"><%=mensagem %>  </h3>
 
                                     <br>
-                                    <button type="submit"><%=botao%></button>
+                                    <button type="submit"><%=botao %></button>
                                     
 
                                 </form>

@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 
 import Model.Dieta;
+import Model.Usuario;
 import bancoDados.ConnectionFactory;
 
 public class DietaPersist {
@@ -57,6 +58,26 @@ public class DietaPersist {
 		return Dietas;
 		
 	}
+	public List<Dieta> pesquisarDietaPorUsuario(int id) {
+		EntityManager em = new ConnectionFactory().getConnection();
+
+		List<Dieta> dietas = null;
+		try {
+			String Consulta = "from Dieta d where usuario_id = "+id+"";
+			System.out.println("ENTROU AQUIIIIIIII"+ Consulta);
+			
+			dietas = em.createQuery(Consulta).getResultList();
+			
+			System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAA"+dietas.size());
+			
+		} catch (Exception e) {
+			e.getMessage();
+		}finally {
+			em.close();
+		}
+		
+		return dietas;
+    }
 	
 	public Dieta remove(Integer id) {
 		EntityManager em = new ConnectionFactory().getConnection();

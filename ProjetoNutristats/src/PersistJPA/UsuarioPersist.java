@@ -86,6 +86,19 @@ public class UsuarioPersist {
     	}
     	return resultado;
     }
+    public Usuario VerificarSeUsuarioExisteEditar(Usuario usuario) {
+    	Usuario resultado = null;
+    	for(Usuario u: findAll()) {
+    		if(u.equals(usuario)) {
+    			if(u.getId() != usuario.getId()) {
+    				resultado = u;
+        			break;
+    			}
+    			
+    		}
+    	}
+    	return resultado;
+    }
     public boolean verificarSenhaEstaCorreta(Usuario usuario, String senha) {
     	boolean resultado = false;
     	for(Usuario u: findAll()) {
@@ -109,6 +122,7 @@ public class UsuarioPersist {
 			List<Usuario> usuarios = null;
 			usuarios = em.createQuery(emailConsulta).getResultList();
 			u = em.find(Usuario.class, usuarios.get(0).getId());
+			
 		} catch (Exception e) {
 			e.getMessage();
 		}finally {
@@ -122,10 +136,17 @@ public class UsuarioPersist {
 		
 		Usuario u =null;
 		try {
-			String emailConsulta = "from Usuario u where nomeUsuario = '"+nomeUsuario+"'";
+			String emailConsulta = "from Usuario u where nomeUsuario like '"+nomeUsuario+"'";
 			List<Usuario> usuarios = null;
 			usuarios = em.createQuery(emailConsulta).getResultList();
-			u = em.find(Usuario.class, usuarios.get(0).getId());
+			
+			if(usuarios.size()==1) {
+				u = em.find(Usuario.class, usuarios.get(0).getId());			
+			}else {
+				u = this.verificarEmailExiste(nomeUsuario);
+				//System.out.println("Entrou aqui usuariosfiosfosif" + u);
+			}
+	
 		} catch (Exception e) {
 			e.getMessage();
 		}finally {
